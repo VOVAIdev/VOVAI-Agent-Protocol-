@@ -1,0 +1,15 @@
+name: Build and Publish JS SDK Package
+
+on:
+  push:
+    tags: [js-sdk-v*]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    uses: ./.github/workflows/js-sdk-shared.yaml
+    secrets: inherit
+    with:
+      should-publish: true
